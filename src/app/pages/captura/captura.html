@@ -1,0 +1,51 @@
+<p>captura works!</p>
+<div class="wrap">
+  <mat-card>
+    <mat-card-title>Captura</mat-card-title>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Fecha (YYYY-MM-DD)</mat-label>
+        <input matInput [ngModel]="fecha()" (ngModelChange)="fecha.set($event)" />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="cargar()">Cargar</button>
+      <button mat-raised-button color="accent" [disabled]="saving()" (click)="guardar()">
+        {{ saving() ? 'Guardando...' : 'Guardar' }}
+      </button>
+      <button mat-stroked-button (click)="irDesglose()">Ver desglose</button>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h3>Ingresos manuales</h3>
+    <div class="grid">
+      <mat-form-field appearance="outline"><mat-label>Recargas</mat-label><input matInput [ngModel]="recargas()" (ngModelChange)="recargas.set($event)" /></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Ciber</mat-label><input matInput [ngModel]="ciber()" (ngModelChange)="ciber.set($event)" /></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>RFC</mat-label><input matInput [ngModel]="rfc()" (ngModelChange)="rfc.set($event)" /></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Actas</mat-label><input matInput [ngModel]="actas()" (ngModelChange)="actas.set($event)" /></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Color variable</mat-label><input matInput [ngModel]="color_variable()" (ngModelChange)="color_variable.set($event)" /></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Otros</mat-label><input matInput [ngModel]="otros()" (ngModelChange)="otros.set($event)" /></mat-form-field>
+    </div>
+
+    <h3>Lecturas (hoy)</h3>
+    <div class="grid">
+      <mat-form-field appearance="outline"><mat-label>Copia Kyocera</mat-label><input matInput [ngModel]="lect_copia_kyocera()" (ngModelChange)="lect_copia_kyocera.set($event)" /></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Impresiones Kyocera</mat-label><input matInput [ngModel]="lect_imp_kyocera()" (ngModelChange)="lect_imp_kyocera.set($event)" /></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Impresiones Brother</mat-label><input matInput [ngModel]="lect_imp_brother()" (ngModelChange)="lect_imp_brother.set($event)" /></mat-form-field>
+    </div>
+
+    <h3>Caja</h3>
+    <div class="grid">
+      <mat-form-field appearance="outline"><mat-label>Retiro</mat-label><input matInput [ngModel]="retiro_caja()" (ngModelChange)="retiro_caja.set($event)" /></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Caja inicial</mat-label><input matInput [ngModel]="caja_inicial()" (ngModelChange)="caja_inicial.set($event)" /></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Caja real</mat-label><input matInput [ngModel]="caja_real()" (ngModelChange)="caja_real.set($event)" /></mat-form-field>
+    </div>
+
+    <h3>Notas</h3>
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Notas</mat-label>
+      <input matInput [ngModel]="notas()" (ngModelChange)="notas.set($event)" />
+    </mat-form-field>
+  </mat-card>
+</div>

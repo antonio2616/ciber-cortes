@@ -1,12 +1,15 @@
 {
+  "main": "electron/main.cjs",
   "name": "ciber-cortes",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
+    "ng": "ng serve",
+    "start": "concurrently \"npm:ng\" \"npm:electron\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "electron": "wait-on http://localhost:4200 && electron .",
+    "rebuild": "electron-rebuild -f -w better-sqlite3"
   },
   "private": true,
   "packageManager": "npm@11.9.0",
@@ -30,6 +33,7 @@
     "@angular/material": "^21.2.0",
     "concurrently": "^9.2.1",
     "electron": "^40.6.1",
+    "electron-rebuild": "^3.2.9",
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
     "typescript": "~5.9.2",

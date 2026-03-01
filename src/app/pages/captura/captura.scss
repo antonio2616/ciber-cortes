@@ -1,0 +1,6 @@
+.wrap { padding: 16px; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 12px; margin: 10px 0 18px; }
+.full { width: 100%; }
+h3 { margin: 16px 0 8px; font-weight: 600; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }

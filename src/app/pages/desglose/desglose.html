@@ -1,0 +1,10 @@
+<div class="wrap">
+  <mat-card>
+    <mat-card-title>Desglose</mat-card-title>
+    <mat-card-subtitle>Fecha: {{ fecha() }}</mat-card-subtitle>
+
+    <button mat-stroked-button (click)="cargar()">Recargar</button>
+
+    <pre class="pre">{{ info() | json }}</pre>
+  </mat-card>
+</div>
